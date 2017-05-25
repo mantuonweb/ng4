@@ -11,6 +11,7 @@ import { AuthService } from "./common/AuthService";
 import { ContactService } from "./common/ContactService";
 import { AppComponent }  from './app.component';
 //routing added
+//child routing
 import { AppRoutingModule, routedComponents } from './app.router.main';
 const routes: Routes = [
 
