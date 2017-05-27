@@ -19,9 +19,25 @@
                         Contacts
                     </a>
                 </li>
-                <li *ngFor="let contact of contacts; let i=index" (click)="onContactChange(contact)">
-                    <a >{{contact.name}}</a>
+                 <li>
+                    <a href="#">
+                        Show All
+                    </a>
                 </li>
+                <li>
+                    <a href="#">
+                        Add
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Edit
+                    </a>
+                </li>
+                
+                <!-- <li *ngFor="let contact of contacts; let i=index" (click)="onContactChange(contact)">
+                    <a >{{contact.name}}</a>
+                </li> -->
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->

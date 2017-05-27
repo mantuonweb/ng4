@@ -150,10 +150,21 @@ $headerborder:#DBDBDB;
 		}
 	}
 }
+.contact-containt{
+	height: 500px;
+}
 .table-responsive{
+	position: relative;
+	height: 100%;
 	border: 1px solid $headerborder;
 	background-color: white;
+	overflow: hidden;
 	margin: 15px;
+	.table-body{
+		height: calc(100% - 50px);
+		position: relative;
+		overflow-y: scroll;
+	}
 	.row{
 		margin: 0px 15px 0px 15px;
 		padding: 15px;
@@ -163,6 +174,7 @@ $headerborder:#DBDBDB;
 			border-bottom: 2px solid $headerborder;
 			&:hover{
 				cursor: initial;
+				background-color: initial;
 			};
 		}
 		&:last-child {
@@ -171,6 +183,7 @@ $headerborder:#DBDBDB;
 		&:hover{
 			cursor: pointer; 
 			cursor: hand;
+			background-color: #FAFAFB;
 		};
 	}
 }

@@ -2,15 +2,21 @@
 CM
 </h1>
  -->
+<div class="table-container contact-containt">
 <div class="container-fluid table-responsive">
+  <div class="table-header">
   <div class="row header">
     <div class="col-sm-4 col-md-4" >Name</div>
     <div class="col-sm-4 col-md-4" >Email</div>
     <div class="col-sm-4 col-md-4" >Phone</div>
   </div>
-  <div class="row" *ngFor="let contact of contacts; let i=index"(click)="onContactChange(contact)">
-    <div class="col-sm-4 col-md-4" >{{contact.name}}</div>
-    <div class="col-sm-4 col-md-4" >{{contact.name}}</div>
-    <div class="col-sm-4 col-md-4" >{{contact.name}}</div>
   </div>
+  <div class="table-body">
+	  <div class="row" *ngFor="let contact of contacts; let i=index"(click)="onContactChange(contact)">
+	    <div class="col-sm-4 col-md-4" >{{contact.name}}</div>
+	    <div class="col-sm-4 col-md-4" >{{contact.emailAddress}}</div>
+	    <div class="col-sm-4 col-md-4" >{{contact.phoneNumber}}</div>
+	  </div>
+  </div>
+</div>
 </div>

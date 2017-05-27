@@ -123,10 +123,20 @@ body {
             color: #535a60;
             background-color: #EFF0F1; }
 
+.contact-containt {
+  height: 500px; }
+
 .table-responsive {
+  position: relative;
+  height: 100%;
   border: 1px solid #DBDBDB;
   background-color: white;
+  overflow: hidden;
   margin: 15px; }
+  .table-responsive .table-body {
+    height: calc(100% - 50px);
+    position: relative;
+    overflow-y: scroll; }
   .table-responsive .row {
     margin: 0px 15px 0px 15px;
     padding: 15px;
@@ -135,11 +145,13 @@ body {
       font-weight: bold;
       border-bottom: 2px solid #DBDBDB; }
       .table-responsive .row.header:hover {
-        cursor: initial; }
+        cursor: initial;
+        background-color: initial; }
     .table-responsive .row:last-child {
       border-bottom: none; }
     .table-responsive .row:hover {
       cursor: pointer;
-      cursor: hand; }
+      cursor: hand;
+      background-color: #FAFAFB; }
 
 /*# sourceMappingURL=output.css.map */
