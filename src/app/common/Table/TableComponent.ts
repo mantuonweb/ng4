@@ -1,3 +1,4 @@
+//https://toddmotto.com/component-events-event-emitter-output-angular-2
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { Router,ActivatedRoute }           from '@angular/router';
 import { ContactService } from '../../common/ContactService';
@@ -12,11 +13,15 @@ export class TableComponent implements OnInit {
   tableData : any[];
   @Input('tableColumns')
   tableColumns : any[];
-  @Output()
-  outTableData = new EventEmitter<any[]>();
+  @Output('onRowClick')
+  outRowData = new EventEmitter<any>();
   constructor()
   {
     console.log('LOGIN');
+  }
+  onRowClick(row:any){
+    console.log(row);
+    this.outRowData.emit(row);
   }
   ngOnInit() {
 
