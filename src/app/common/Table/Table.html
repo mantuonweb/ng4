@@ -1,0 +1,14 @@
+<div class="table-container contact-containt">
+<div class="container-fluid table-responsive">
+  <div class="table-header">
+  <div class="row header">
+    <div class="col-sm-4 col-md-4" *ngFor="let header of tableColumns" >{{header.displayValue}}</div>
+  </div>
+  </div>
+  <div class="table-body">
+	  <div class="row" *ngFor="let contact of tableData; let i=index" (click)="onContactChange(contact)">
+	    <div class="col-sm-4 col-md-4" *ngFor="let header of tableColumns">{{contact[header.columnName]}}</div>
+	  </div>
+  </div>
+</div>
+</div>

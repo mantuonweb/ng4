@@ -16,6 +16,7 @@ const routes: Routes = [
      path: 'home',
      component: HomeComponent,
      //SPECIFY THE CHILDREN
+     //for the child routes
      children: mainChildRoutes
    },
 ];

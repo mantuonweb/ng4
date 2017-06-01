@@ -11,9 +11,11 @@ export class ContactHomeComponent implements OnInit {
   loading:boolean=false;
   contacts:any[];
   sub:any;
+  tableHeader:any[];
   constructor(private router: Router, private auth:AuthService ,private contactService:ContactService)
   {
     console.log('LOGIN',auth);
+    this.tableHeader =[{columnName:'name',displayValue:'Name'},{columnName:'emailAddress',displayValue:'Address'},{columnName:'phoneNumber',displayValue:'Phone'}]
   }
   ngOnInit() {
     this.loadContacts();
