@@ -8,11 +8,19 @@ export class HttpGet extends HttpRoot {
     super(injector);
     this.http = injector.get(Http);
   };
-  sendRequest(){
-      return this.http.get(this.url).map((response:Response) => {
+  private callAPI(){
+  	return this.http.get(this.url).map((response:Response) => {
         return response;
       }).catch((error:any) => {
       	 return Observable.throw(error.json().error || 'Server error');
       });
+  }
+  sendRequest(){
+  	 return new Promise((resolve, reject)=> {
+	      return this.callAPI().subscribe(data => {
+	            var temp = data.json();
+	            resolve(temp);
+	      });
+	 });
   }
 }
