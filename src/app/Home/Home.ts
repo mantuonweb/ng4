@@ -24,20 +24,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     $("#wrapper").toggleClass("toggled");
-    this.loadContacts();
   }
   onContactChange(contact:any){
     this.router.navigateByUrl('/home/'+contact.contactId);
   }
-  loadContacts(){
-     // Get all contacts
-     this.contactService.getContacts();
-     // this.contactService.getContacts().subscribe(
-     // contacts => this.contacts = contacts, //Bind to view
-     // err => {
-     //      console.log(err);
-     // });
-    }
 }
 //exports to outer world
 export const routes: Routes = [
