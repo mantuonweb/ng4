@@ -18,8 +18,15 @@ export class ContactService {
   private getRequest:HttpGet;
   //
   getContacts(){
-    this.getRequest=new HttpGet(this.injector,this.commentsUrl);
-    return this.getRequest.sendRequest();
+     return new Promise((resolve, reject)=> {
+        this.getRequest=new HttpGet(this.injector,this.commentsUrl);
+        this.getRequest.sendRequest().then((contacts)=>{
+          this.contacts=contacts;
+          resolve(contacts);
+        },()=>{
+          reject();
+        });
+      });
   }
   getContact(contactId:any){
     return new Promise((resolve, reject)=> {
