@@ -8,19 +8,9 @@ import {Observable} from 'rxjs/Rx';
 export class HttpRoot {
   public url:string;
   public type:string;
+  public payload:any;
   protected http:Http;
   constructor(public injector:Injector){
     this.http = injector.get(Http);
   };
-  callAPI(){
-    return this.http.get(this.url).map((response:Response) => {
-      return response;
-    }).catch((error:any) => Observable.throw(error.json().error || 'Server error'));
-  }
-  successHandler(res:any){
-    console.log('there');
-  }
-  failureHandler(res:any){
-
-  }
 }

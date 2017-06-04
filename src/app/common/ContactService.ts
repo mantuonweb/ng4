@@ -20,7 +20,7 @@ export class ContactService {
   getContacts(){
     return new Promise((resolve, reject)=> {
         this.getRequest=new HttpGet(this.injector,this.commentsUrl);
-        this.getRequest.callAPI().subscribe(data => {
+        this.getRequest.sendRequest().subscribe(data => {
             this.contacts = data.json();
             resolve(this.contacts);
         });
