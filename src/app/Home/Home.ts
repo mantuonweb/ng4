@@ -31,11 +31,12 @@ export class HomeComponent implements OnInit {
   }
   loadContacts(){
      // Get all contacts
-     this.contactService.getContacts().subscribe(
-     contacts => this.contacts = contacts, //Bind to view
-     err => {
-          console.log(err);
-     });
+     this.contactService.getContacts();
+     // this.contactService.getContacts().subscribe(
+     // contacts => this.contacts = contacts, //Bind to view
+     // err => {
+     //      console.log(err);
+     // });
     }
 }
 //exports to outer world

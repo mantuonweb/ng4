@@ -14,7 +14,6 @@ export class ContactHomeComponent implements OnInit {
   tableHeader:any[];
   constructor(private router: Router, private auth:AuthService ,private contactService:ContactService)
   {
-    console.log('LOGIN',auth);
     this.tableHeader =[{columnName:'name',displayValue:'Name'},{columnName:'emailAddress',displayValue:'Address'},{columnName:'phoneNumber',displayValue:'Phone'}]
   }
   ngOnInit() {
@@ -26,10 +25,10 @@ export class ContactHomeComponent implements OnInit {
 
   loadContacts(){
      // Get all contacts
-     this.contactService.getContacts().subscribe(
-     contacts => this.contacts = contacts, //Bind to view
-     err => {
-          console.log(err);
+     this.contactService.getContacts().then((contacts)=>{
+         this.contacts=contacts;
+     },()=>{
+
      });
-    }
+  }
 }

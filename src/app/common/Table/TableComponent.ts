@@ -1,4 +1,5 @@
 //https://toddmotto.com/component-events-event-emitter-output-angular-2
+//https://www.npmjs.com/package/angular2-fontawesome
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { Router,ActivatedRoute }           from '@angular/router';
 import { ContactService } from '../../common/ContactService';
