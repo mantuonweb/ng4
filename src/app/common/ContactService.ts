@@ -1,6 +1,8 @@
 import { Injectable,Injector }    from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { HttpGet } from './API/HttpGet';
+import { Contact } from './DataTypes/Contact';
+import { ContactList } from './DataTypes/ContactList';
 import {Observable} from 'rxjs/Rx';
 //global name space
 @Injectable()
@@ -20,9 +22,13 @@ export class ContactService {
   getContacts(){
      return new Promise((resolve, reject)=> {
         this.getRequest=new HttpGet(this.injector,this.commentsUrl);
-        this.getRequest.sendRequest().then((contacts)=>{
-          this.contacts=contacts;
-          resolve(contacts);
+        this.getRequest.sendRequest().then((contacts:any[])=>{
+          var list=contacts.map((item)=>{
+            return new Contact(item.contactId,item.name,item.emailAddress,item.phoneNumber,item.responsibility);
+          });
+          var contactList = new ContactList(list);
+          this.contacts=list;
+          resolve(contactList);
         },()=>{
           reject();
         });
@@ -30,7 +36,7 @@ export class ContactService {
   }
   getContact(contactId:any){
     return new Promise((resolve, reject)=> {
-      let contact=this.contacts.find((x:any) => x.contactId == contactId);
+      let contact=this.contacts.find((x:any) => x.id === contactId);
       if(contact)
       {
         resolve(contact)
